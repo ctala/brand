@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Marca 2026 — Es la Hora de Aprender</title>
+    <link rel="icon" href="https://assets.nyx.cristiantala.com/2026/images/favicon-cristian-tala-2026.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --acid:    #ccff00;
+            --blue:    #2d5bff;
+            --black:   #0a0a0a;
+            --white:   #f5f5f0;
+            --gray:    #888880;
+            --border:  #f5f5f0;
+            --shadow:  5px 5px 0px #ccff00;
+            --shadow-b: 5px 5px 0px #2d5bff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--black);
+            border-bottom: 3px solid var(--acid);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+        }
+        nav .nav-logo {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--acid);
+            letter-spacing: 0.05em;
+        }
+        nav a {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--gray);
+            text-decoration: none;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 0.4rem 0.8rem;
+            border: 1px solid transparent;
+            transition: all 0.2s;
+        }
+        nav a:hover { color: var(--acid); border-color: var(--acid); }
+        .nav-links { display: flex; gap: 0.5rem; }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 90vh;
+            display: grid;
+            place-items: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 4px solid var(--white);
+        }
+
+        /* Brutalist grid background */
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(204,255,0,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(204,255,0,0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .hero-inner {
+            position: relative;
+            text-align: center;
+            max-width: 900px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: var(--blue);
+            color: var(--white);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 0.4rem 1.2rem;
+            border: 2px solid var(--white);
+            box-shadow: 3px 3px 0 var(--white);
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(3rem, 8vw, 6.5rem);
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 .accent { color: var(--acid); }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 560px;
+            margin: 0 auto 3rem;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--white);
+            box-shadow: 3px 3px 0 var(--acid);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* ── SECTION ── */
+        section {
+            padding: 5rem 2rem;
+            border-bottom: 3px solid rgba(255,255,255,0.1);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        section.full {
+            max-width: 100%;
+            border-bottom: 3px solid rgba(255,255,255,0.1);
+            padding: 5rem 0;
+        }
+
+        section.full .inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--acid);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .section-label::before {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 2px;
+            background: var(--acid);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 2.5rem;
+            line-height: 1.1;
+        }
+
+        /* ── BRUTALIST CARD ── */
+        .brut-card {
+            border: 2px solid var(--white);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .brut-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 7px 7px 0px var(--acid);
+        }
+
+        .brut-card-blue {
+            border: 2px solid var(--blue);
+            box-shadow: var(--shadow-b);
+        }
+        .brut-card-blue:hover { box-shadow: 7px 7px 0px var(--blue); }
+
+        .brut-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--acid);
+        }
+        .brut-card-blue h3 { color: #7a9aff; }
+
+        /* ── GRID ── */
+        .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+        }
+
+        /* ── COLOR PALETTE ── */
+        .palette {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            border: 3px solid var(--white);
+            box-shadow: 6px 6px 0 var(--acid);
+        }
+        @media (max-width: 640px) { .palette { grid-template-columns: repeat(2,1fr); } }
+
+        .swatch {
+            padding: 2.5rem 1.2rem 1.2rem;
+            border-right: 2px solid var(--black);
+        }
+        .swatch:last-child { border-right: none; }
+
+        .swatch-name {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+        .swatch-hex {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            opacity: 0.7;
+            margin-bottom: 0.4rem;
+        }
+        .swatch-use { font-size: 0.75rem; opacity: 0.6; line-height: 1.4; }
+
+        /* ── HOSTS ── */
+        .host-card {
+            border: 3px solid var(--white);
+            padding: 2rem;
+            box-shadow: 6px 6px 0 var(--acid);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .host-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        .host-role {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--acid);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        .host-desc { font-size: 0.9rem; color: var(--gray); margin-top: 0.5rem; }
+        .host-link {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: #7a9aff;
+            text-decoration: none;
+            margin-top: 0.5rem;
+        }
+        .host-link:hover { color: var(--acid); }
+
+        /* ── VOICE TABLE ── */
+        .v-table { width: 100%; border-collapse: collapse; }
+        .v-table th, .v-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border: 2px solid rgba(255,255,255,0.15);
+            font-size: 0.9rem;
+        }
+        .v-table th {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            background: rgba(204,255,0,0.08);
+            color: var(--acid);
+        }
+        .v-table tr:hover td { background: rgba(255,255,255,0.03); }
+
+        /* ── DO / DON'T ── */
+        .donts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        @media (max-width: 640px) { .donts { grid-template-columns: 1fr; } }
+
+        .do-box, .dont-box {
+            border: 2px solid;
+            padding: 1.5rem;
+        }
+        .do-box { border-color: var(--acid); box-shadow: 4px 4px 0 var(--acid); }
+        .dont-box { border-color: #ff3b3b; box-shadow: 4px 4px 0 #ff3b3b; }
+
+        .do-box h4 { color: var(--acid); font-family: 'Space Mono', monospace; font-size: 0.8rem; letter-spacing: 0.15em; margin-bottom: 1rem; }
+        .dont-box h4 { color: #ff3b3b; font-family: 'Space Mono', monospace; font-size: 0.8rem; letter-spacing: 0.15em; margin-bottom: 1rem; }
+
+        .do-box li, .dont-box li {
+            list-style: none;
+            font-size: 0.9rem;
+            padding: 0.3rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+            color: rgba(255,255,255,0.85);
+        }
+        .do-box li::before { content: '✓'; color: var(--acid); position: absolute; left: 0; font-weight: 700; }
+        .dont-box li::before { content: '✗'; color: #ff3b3b; position: absolute; left: 0; font-weight: 700; }
+
+        /* ── SPEC TABLE ── */
+        .spec-table { width: 100%; border-collapse: collapse; }
+        .spec-table th, .spec-table td {
+            padding: 0.7rem 1rem;
+            border: 2px solid rgba(255,255,255,0.12);
+            font-size: 0.88rem;
+        }
+        .spec-table th {
+            background: rgba(45,91,255,0.15);
+            color: #7a9aff;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+        }
+        .spec-table td:first-child { color: var(--acid); font-weight: 600; font-size: 0.82rem; }
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            background: rgba(204,255,0,0.1);
+            padding: 0.15rem 0.4rem;
+            color: var(--acid);
+        }
+
+        /* ── ASSETS BOX ── */
+        .asset-list { list-style: none; }
+        .asset-list li {
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        .asset-list li:last-child { border-bottom: none; }
+        .asset-list a {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: #7a9aff;
+            text-decoration: none;
+        }
+        .asset-list a:hover { color: var(--acid); }
+
+        /* ── HIGHLIGHT BOX ── */
+        .highlight {
+            border: 2px solid var(--acid);
+            border-left: 6px solid var(--acid);
+            padding: 1.2rem 1.5rem;
+            background: rgba(204,255,0,0.04);
+            font-size: 0.95rem;
+            margin: 1.5rem 0;
+        }
+        .highlight strong { color: var(--acid); }
+
+        /* ── FOOTER ── */
+        footer {
+            border-top: 3px solid var(--acid);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            background: rgba(204,255,0,0.03);
+        }
+        footer p { font-size: 0.85rem; color: var(--gray); margin: 0.2rem 0; }
+        footer .update {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: rgba(204,255,0,0.5);
+            letter-spacing: 0.15em;
+            margin-top: 0.75rem;
+        }
+        footer a { color: #7a9aff; text-decoration: none; }
+        footer a:hover { color: var(--acid); }
+
+        /* ── MISC ── */
+        .mono { font-family: 'Space Mono', monospace; }
+        .text-acid { color: var(--acid); }
+        .text-blue { color: #7a9aff; }
+        .mt { margin-top: 1.5rem; }
+        p + p { margin-top: 0.75rem; }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <span class="nav-logo">ES LA HORA DE APRENDER · BRAND MANUAL</span>
+    <div class="nav-links">
+        <a href="#identidad">Identidad</a>
+        <a href="#hosts">Hosts</a>
+        <a href="#voz">Voz</a>
+        <a href="#assets">Assets</a>
+        <a href="index.html">← Índice</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-inner">
+        <div class="hero-tag">Manual de Marca 2026</div>
+        <h1>Es la Hora<br><span class="accent">de Aprender</span></h1>
+        <p class="hero-desc">Podcast de tecnología, automatización y startups. Sin postureo, con experiencias reales.</p>
+        <div class="hero-badges">
+            <span class="badge">Podcast</span>
+            <span class="badge">YouTube · Spotify</span>
+            <span class="badge">Neo-Brutalism</span>
+            <span class="badge">2026</span>
+        </div>
+    </div>
+</div>
+
+
+<!-- 01 SOBRE EL PODCAST -->
+<section id="sobre">
+    <div class="section-label">01 — Sobre el Podcast</div>
+    <h2>Qué es y para qué sirve</h2>
+    <div class="grid-2">
+        <div>
+            <p>"Es la Hora de Aprender" es un podcast de conversación entre practitioners — no teóricos. Tres hosts que usan las herramientas de las que hablan, tienen los negocios de los que hablan y han cometido los errores de los que hablan.</p>
+            <p class="mt">El formato es libre: no hay scripts, no hay libreto, no hay bullet points obligatorios. Hay una idea central por episodio y tres perspectivas distintas.</p>
+            <div class="highlight mt">
+                <strong>Propuesta de valor:</strong> Aprender de gente que está en las trincheras, no desde el palco.
+            </div>
+        </div>
+        <div>
+            <div class="brut-card">
+                <h3>Datos del Podcast</h3>
+                <table class="spec-table">
+                    <tr><td>Sitio</td><td><a href="https://eslahoradeaprender.com" style="color:#7a9aff;">eslahoradeaprender.com</a></td></tr>
+                    <tr><td>Plataformas</td><td>YouTube · Spotify · Apple</td></tr>
+                    <tr><td>Frecuencia</td><td>Quincenal</td></tr>
+                    <tr><td>Duración media</td><td>55–75 minutos</td></tr>
+                    <tr><td>Stack</td><td>Astro · Cloudflare Pages</td></tr>
+                    <tr><td>Repo</td><td><a href="https://github.com/ctala/landing-es-la-hora-de-aprender" style="color:#7a9aff;">ctala/landing-es…</a></td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- 02 IDENTIDAD VISUAL -->
+<section id="identidad">
+    <div class="section-label">02 — Identidad Visual</div>
+    <h2>Paleta y Estilo</h2>
+
+    <!-- Palette -->
+    <div class="palette">
+        <div class="swatch" style="background:#ccff00; color:#0a0a0a;">
+            <div class="swatch-name">Acid Yellow</div>
+            <div class="swatch-hex">#ccff00</div>
+            <div class="swatch-use">Color primario. Acentos, títulos destacados, CTAs.</div>
+        </div>
+        <div class="swatch" style="background:#2d5bff; color:#ffffff;">
+            <div class="swatch-name">Electric Blue</div>
+            <div class="swatch-hex">#2d5bff</div>
+            <div class="swatch-use">Secundario. Labels, links, elementos de apoyo.</div>
+        </div>
+        <div class="swatch" style="background:#0a0a0a; color:#f5f5f0; border-right: 2px solid #333;">
+            <div class="swatch-name">Black</div>
+            <div class="swatch-hex">#0a0a0a</div>
+            <div class="swatch-use">Fondo principal. Nunca sustituir por gris.</div>
+        </div>
+        <div class="swatch" style="background:#f5f5f0; color:#0a0a0a; border-right: none;">
+            <div class="swatch-name">Off-White</div>
+            <div class="swatch-hex">#f5f5f0</div>
+            <div class="swatch-use">Texto principal, bordes brutales.</div>
+        </div>
+    </div>
+
+    <!-- Style -->
+    <div class="grid-2 mt">
+        <div class="brut-card">
+            <h3>Estilo Visual: Neo-Brutalismo</h3>
+            <ul style="list-style:none; font-size:0.9rem;">
+                <li style="padding:0.3rem 0; border-bottom:1px solid rgba(255,255,255,0.08);">Bordes gruesos y duros — <strong>2–4px solid</strong></li>
+                <li style="padding:0.3rem 0; border-bottom:1px solid rgba(255,255,255,0.08);">Sombras offset — <strong>5px 5px 0 #ccff00</strong></li>
+                <li style="padding:0.3rem 0; border-bottom:1px solid rgba(255,255,255,0.08);">Sin border-radius en elementos estructurales</li>
+                <li style="padding:0.3rem 0; border-bottom:1px solid rgba(255,255,255,0.08);">Grid visible, estructura expuesta</li>
+                <li style="padding:0.3rem 0; border-bottom:1px solid rgba(255,255,255,0.08);">Alto contraste — nunca texto gris sobre gris</li>
+                <li style="padding:0.3rem 0;">Tipografía pesada y técnica</li>
+            </ul>
+        </div>
+        <div class="brut-card brut-card-blue">
+            <h3>Tipografía</h3>
+            <ul style="list-style:none; font-size:0.9rem;">
+                <li style="padding:0.3rem 0; border-bottom:1px solid rgba(255,255,255,0.08);"><strong>Títulos:</strong> Space Grotesk 700</li>
+                <li style="padding:0.3rem 0; border-bottom:1px solid rgba(255,255,255,0.08);"><strong>Cuerpo:</strong> Space Grotesk 400/500</li>
+                <li style="padding:0.3rem 0; border-bottom:1px solid rgba(255,255,255,0.08);"><strong>Labels / código:</strong> JetBrains Mono / Space Mono</li>
+                <li style="padding:0.3rem 0; border-bottom:1px solid rgba(255,255,255,0.08);">Fallback: system-ui, sans-serif</li>
+                <li style="padding:0.3rem 0;"><strong>NO usar:</strong> fuentes serif, scripts, display decorativas</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Separación de marcas -->
+    <div class="highlight mt">
+        <strong>Separación de marcas:</strong> Acid Yellow + Electric Blue es EXCLUSIVO de "Es la Hora de Aprender". No mezclar con Synthwave (Cristian Tala) ni Orange/White (Ecosistema Startup).
+    </div>
+</section>
+
+
+<!-- 03 HOSTS -->
+<section id="hosts">
+    <div class="section-label">03 — Los Hosts</div>
+    <h2>Quiénes hablan</h2>
+    <div class="grid-3">
+        <div class="host-card">
+            <span class="host-role">Host Principal</span>
+            <span class="host-name">Cristian Tala</span>
+            <span class="host-desc">Fundador de Pago Fácil (exit US$23M), inversionista ángel, fundador de Ecosistema Startup. Enfoque en IA, automatización, startups e inversión.</span>
+            <a href="https://linkedin.com/in/ctala" class="host-link">linkedin.com/in/ctala →</a>
+            <a href="https://cristiantala.com" class="host-link">cristiantala.com →</a>
+        </div>
+        <div class="host-card">
+            <span class="host-role">Co-Host</span>
+            <span class="host-name">Diego Arias</span>
+            <span class="host-desc">Emprendedor, fundador de Fondobot. Perspectiva desde producto, automatización y startups de tecnología en LATAM.</span>
+            <a href="https://linkedin.com/in/godiegoarias" class="host-link">linkedin.com/in/godiegoarias →</a>
+            <a href="https://godiegoarias.com" class="host-link">godiegoarias.com →</a>
+        </div>
+        <div class="host-card">
+            <span class="host-role">Co-Host</span>
+            <span class="host-name">Rodrigo Rojo</span>
+            <span class="host-desc">Fundador, developer y emprendedor. Perspectiva técnica y de producto. Enfoque en sistemas, código y cómo se construye en la práctica.</span>
+            <a href="https://linkedin.com/in/rodrigorojo" class="host-link">linkedin.com/in/rodrigorojo →</a>
+            <a href="https://rojo.me" class="host-link">rojo.me →</a>
+        </div>
+    </div>
+
+    <div class="brut-card mt">
+        <h3>Cómo mencionar a los hosts</h3>
+        <table class="spec-table" style="margin-top:0.5rem;">
+            <thead><tr><th>Host</th><th>Mención correcta</th><th>Evitar</th></tr></thead>
+            <tbody>
+                <tr><td>Cristian Tala</td><td>"Cristian", "Cristian Tala"</td><td>"@naitus", "el fundador de Pago Fácil" como único descriptor</td></tr>
+                <tr><td>Diego Arias</td><td>"Diego", "Diego Arias"</td><td>Inventar títulos o roles no confirmados</td></tr>
+                <tr><td>Rodrigo Rojo</td><td>"Rodrigo", "Rodrigo Rojo"</td><td>Inventar títulos o roles no confirmados</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+<!-- 04 VOZ Y TONO -->
+<section id="voz">
+    <div class="section-label">04 — Voz y Tono</div>
+    <h2>Cómo suena el podcast</h2>
+
+    <table class="v-table">
+        <thead>
+            <tr>
+                <th>Tipo de contenido</th>
+                <th>Tono</th>
+                <th>Ejemplo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Introducción del episodio</td>
+                <td>Directo, sin intro larga</td>
+                <td>"Hoy hablamos de X. Sin más."</td>
+            </tr>
+            <tr>
+                <td>Debate entre hosts</td>
+                <td>Conversacional, con fricción real</td>
+                <td>Desacuerdos OK. No se fuerza consenso.</td>
+            </tr>
+            <tr>
+                <td>Descripción del episodio (web/Spotify)</td>
+                <td>Informativo, 3 líneas máx</td>
+                <td>Tema + 2-3 preguntas que se responden</td>
+            </tr>
+            <tr>
+                <td>Posts en redes del episodio</td>
+                <td>Extracto + perspectiva, no promo vacía</td>
+                <td>"En el último episodio dijimos X. Yo creo Y."</td>
+            </tr>
+            <tr>
+                <td>Título del episodio</td>
+                <td>Directo, sin clickbait</td>
+                <td>"IA, Build vs Buy y Por Qué los Procesos Importan"</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="donts mt">
+        <div class="do-box">
+            <h4>✓ SÍ</h4>
+            <ul>
+                <li>Opiniones directas aunque dividan</li>
+                <li>Ejemplos reales con números concretos</li>
+                <li>Desacuerdo entre hosts</li>
+                <li>Admitir cuando no se sabe algo</li>
+                <li>Humor natural, sin forzar</li>
+                <li>Lenguaje coloquial sin vulgaridad excesiva</li>
+            </ul>
+        </div>
+        <div class="dont-box">
+            <h4>✗ NO</h4>
+            <ul>
+                <li>Intro de 5 minutos con música y presentación</li>
+                <li>Citas motivacionales de LinkedIn</li>
+                <li>Forzar acuerdo cuando no lo hay</li>
+                <li>Datos sin fuente o inventados</li>
+                <li>Promo excesiva de productos/servicios propios</li>
+                <li>Lenguaje corporativo o "marca blanca"</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<!-- 05 FORMATOS Y ASSETS -->
+<section id="assets">
+    <div class="section-label">05 — Formatos y Assets</div>
+    <h2>Especificaciones técnicas</h2>
+
+    <table class="spec-table">
+        <thead>
+            <tr>
+                <th>Asset</th>
+                <th>Dimensiones</th>
+                <th>Formato</th>
+                <th>Notas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Thumbnail Episodio</td>
+                <td>1280 × 720px</td>
+                <td>WebP / JPG</td>
+                <td>Fondo negro, número de episodio en acid yellow, título en blanco</td>
+            </tr>
+            <tr>
+                <td>OG Image (web)</td>
+                <td>1200 × 630px</td>
+                <td>JPG</td>
+                <td>Mismo que thumbnail o variante con logo</td>
+            </tr>
+            <tr>
+                <td>Cover Spotify/Apple</td>
+                <td>3000 × 3000px</td>
+                <td>JPG</td>
+                <td>Logo del podcast centrado, fondo negro</td>
+            </tr>
+            <tr>
+                <td>Post LinkedIn/Twitter</td>
+                <td>1200 × 628px</td>
+                <td>JPG</td>
+                <td>Extracto + número episodio + URL</td>
+            </tr>
+            <tr>
+                <td>Short / Reel</td>
+                <td>1080 × 1920px</td>
+                <td>MP4</td>
+                <td>Subtítulos en acid yellow, clip de 60–90s</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="brut-card mt">
+        <h3>Estructura de thumbnails</h3>
+        <p style="font-size:0.9rem; color:rgba(255,255,255,0.7);">Cada thumbnail debe tener:</p>
+        <ul style="list-style:none; font-size:0.9rem; margin-top:0.75rem;">
+            <li style="padding:0.3rem 0; padding-left:1.2rem; position:relative;"><span style="position:absolute;left:0;color:var(--acid);">▶</span> <strong>Número de episodio</strong> en Acid Yellow, esquina superior izquierda</li>
+            <li style="padding:0.3rem 0; padding-left:1.2rem; position:relative;"><span style="position:absolute;left:0;color:var(--acid);">▶</span> <strong>Título corto</strong> del episodio en blanco, tipografía grande</li>
+            <li style="padding:0.3rem 0; padding-left:1.2rem; position:relative;"><span style="position:absolute;left:0;color:var(--acid);">▶</span> <strong>Fondo</strong>: negro (#0a0a0a) con grid sutil o imagen de los hosts</li>
+            <li style="padding:0.3rem 0; padding-left:1.2rem; position:relative;"><span style="position:absolute;left:0;color:var(--acid);">▶</span> <strong>Logo del podcast</strong> en esquina inferior derecha</li>
+            <li style="padding:0.3rem 0; padding-left:1.2rem; position:relative;"><span style="position:absolute;left:0;color:var(--acid);">▶</span> <strong>URL</strong>: eslahoradeaprender.com (nunca @handles)</li>
+        </ul>
+    </div>
+
+    <!-- Downloads -->
+    <div class="brut-card brut-card-blue mt">
+        <h3>Assets Disponibles</h3>
+        <ul class="asset-list">
+            <li>
+                <span>Thumbnails episodios</span>
+                <a href="https://eslahoradeaprender.com/thumbnails/" target="_blank">eslahoradeaprender.com/thumbnails/ →</a>
+            </li>
+            <li>
+                <span>Brand assets (R2)</span>
+                <a href="https://assets.cristiantala.com/brand/podcast/" target="_blank">assets.cristiantala.com/brand/podcast/ →</a>
+            </li>
+            <li>
+                <span>Repo del sitio</span>
+                <a href="https://github.com/ctala/landing-es-la-hora-de-aprender" target="_blank">github.com/ctala/landing-… →</a>
+            </li>
+            <li>
+                <span>Manual de marca (GitHub)</span>
+                <a href="https://github.com/ctala/brand/tree/main/es-la-hora-de-aprender" target="_blank">github.com/ctala/brand →</a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+
+<!-- 06 DISTRIBUCIÓN -->
+<section>
+    <div class="section-label">06 — Distribución</div>
+    <h2>Cómo se publica un episodio</h2>
+    <div class="grid-2">
+        <div>
+            <div class="brut-card">
+                <h3>Flujo automático</h3>
+                <ol style="list-style:none; counter-reset:steps; font-size:0.9rem;">
+                    <li style="counter-increment:steps; padding:0.4rem 0; padding-left:2rem; position:relative;">
+                        <span style="position:absolute;left:0;color:var(--acid);font-family:'Space Mono',monospace;font-size:0.8rem;">01.</span>
+                        Crear <code>.md</code> del episodio en <code>src/content/episodes/</code>
+                    </li>
+                    <li style="counter-increment:steps; padding:0.4rem 0; padding-left:2rem; position:relative; border-top:1px solid rgba(255,255,255,0.08);">
+                        <span style="position:absolute;left:0;color:var(--acid);font-family:'Space Mono',monospace;font-size:0.8rem;">02.</span>
+                        Push a <code>main</code> → Cloudflare Pages auto-deploy (~2 min)
+                    </li>
+                    <li style="counter-increment:steps; padding:0.4rem 0; padding-left:2rem; position:relative; border-top:1px solid rgba(255,255,255,0.08);">
+                        <span style="position:absolute;left:0;color:var(--acid);font-family:'Space Mono',monospace;font-size:0.8rem;">03.</span>
+                        IndexNow notifica a Bing/Yandex
+                    </li>
+                    <li style="counter-increment:steps; padding:0.4rem 0; padding-left:2rem; position:relative; border-top:1px solid rgba(255,255,255,0.08);">
+                        <span style="position:absolute;left:0;color:var(--acid);font-family:'Space Mono',monospace;font-size:0.8rem;">04.</span>
+                        Post en cristiantala.com (CPT) + ecosistemastartup.com (blog)
+                    </li>
+                    <li style="counter-increment:steps; padding:0.4rem 0; padding-left:2rem; position:relative; border-top:1px solid rgba(255,255,255,0.08);">
+                        <span style="position:absolute;left:0;color:var(--acid);font-family:'Space Mono',monospace;font-size:0.8rem;">05.</span>
+                        Social: LinkedIn (Cristian + Diego + Rodrigo)
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div>
+            <div class="brut-card brut-card-blue">
+                <h3>Plataformas de distribución</h3>
+                <ul style="list-style:none; font-size:0.9rem;">
+                    <li style="padding:0.35rem 0; border-bottom:1px solid rgba(255,255,255,0.08);">🎥 <strong>YouTube</strong> — Canal principal, episodio completo</li>
+                    <li style="padding:0.35rem 0; border-bottom:1px solid rgba(255,255,255,0.08);">🎧 <strong>Spotify</strong> — Audio sincronizado</li>
+                    <li style="padding:0.35rem 0; border-bottom:1px solid rgba(255,255,255,0.08);">🎙️ <strong>Apple Podcasts</strong> — Via RSS</li>
+                    <li style="padding:0.35rem 0; border-bottom:1px solid rgba(255,255,255,0.08);">🌐 <strong>eslahoradeaprender.com</strong> — Página del episodio</li>
+                    <li style="padding:0.35rem 0; border-bottom:1px solid rgba(255,255,255,0.08);">📝 <strong>cristiantala.com</strong> — CPT post</li>
+                    <li style="padding:0.35rem 0;">📰 <strong>ecosistemastartup.com</strong> — Blog post</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>Manual de Marca — Es la Hora de Aprender</p>
+    <p><a href="https://eslahoradeaprender.com">eslahoradeaprender.com</a> · <a href="index.html">← Volver al índice</a></p>
+    <p class="update">Versión 1.0 · Marzo 2026 · Mantenido por Nyx</p>
+</footer>
+
+</body>
+</html>
