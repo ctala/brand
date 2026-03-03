@@ -11,7 +11,9 @@
 Podcast sobre tecnología, automatización y startups. Co-conducido por Cristian Tala, Diego Arias y Rodrigo Rojo.
 
 **Tagline:** "Es la Hora de Aprender"  
-**Plataformas:** YouTube · Spotify · Apple Podcasts
+**Plataformas:** YouTube · Spotify · Apple Podcasts  
+**YouTube:** https://www.youtube.com/@EsLaHoraDeAprender_com  
+**Spotify:** https://open.spotify.com/show/7o7JR0Un1jc6wev0VjNm0C
 
 ---
 
