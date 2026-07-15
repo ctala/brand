@@ -1,6 +1,6 @@
 # Manual de Marca — Es la Hora de Aprender
 
-**Actualizado:** 2026-03-03  
+**Actualizado:** 2026-07-15  
 **Sitio:** https://eslahoradeaprender.com  
 **Repo:** https://github.com/ctala/landing-es-la-hora-de-aprender
 
@@ -35,7 +35,11 @@ Podcast sobre tecnología, automatización y startups. Co-conducido por Cristian
 | Acid Yellow | `#ccff00` | Color primario, acentos |
 | Electric Blue | `#2d5bff` | Secundario |
 | Negro | `#0a0a0a` | Fondo principal |
-| Blanco | `#ffffff` | Texto |
+| Off-White | `#f5f5f0` | Texto principal, bordes brutales |
+
+### Logo
+
+Wordmark en texto: `▶ Es la Hora de Aprender` (Archivo Black, "Hora" en acid, marca ▶ al inicio). Monograma = ▶ en badge. Especificación completa en `brand-manual.html` (sección 02).
 
 ### Tecnología
 - **Framework:** Astro (Content Collections)

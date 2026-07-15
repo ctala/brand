@@ -8,7 +8,7 @@ Repositorio centralizado con los manuales de marca y assets públicos de las tre
 |-------|--------|-----|--------|
 | [Cristian Tala](./cristian-tala/) | Marca personal | [ctala.html](https://assets.nyx.cristiantala.com/brand/ctala.html) | `assets.cristiantala.com/brand/` |
 | [Ecosistema Startup](./ecosistema-startup/) | Medio digital | [ecosistema.html](https://assets.nyx.cristiantala.com/brand/ecosistema.html) | `assets.cristiantala.com/brand/` |
-| [Es la Hora de Aprender](./es-la-hora-de-aprender/) | Podcast | [eslahoradeaprender.com](https://eslahoradeaprender.com) | `assets.cristiantala.com/brand/podcast/` |
+| [Es la Hora de Aprender](./es-la-hora-de-aprender/) | [hora.html](https://assets.cristiantala.com/brand/hora.html) | [eslahoradeaprender.com](https://eslahoradeaprender.com) | `assets.cristiantala.com/brand/` |
 
 ## Assets Públicos
 
@@ -29,4 +29,4 @@ Las páginas HTML en `/var/www/assets/brand/` se sincronizan manualmente.
 
 ---
 
-*Mantenido por Nyx · Última actualización: 2026-03-03*
+*Mantenido por Nyx · Última actualización: 2026-07-15*
