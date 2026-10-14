@@ -30,3 +30,23 @@ Cyan neón:       #00d4ff
 Magenta:         #ff006e
 Fondo:           #0a0a1a
 ```
+
+## Avatares de agentes
+
+13 avatares originales (1024×1024) para los agentes de Grok Bot. Estilo, prompts y ajustes en [`agentes/STYLE.md`](agentes/STYLE.md); hoja de contacto en [`agentes/contact-sheet.png`](agentes/contact-sheet.png).
+
+| Agente | Archivo |
+|---|---|
+| Rayleigh | `agentes/rayleigh.png` |
+| Usopp | `agentes/usopp.png` |
+| Vivi | `agentes/vivi.png` |
+| Franky | `agentes/franky.png` |
+| Jinbe | `agentes/jinbe.png` |
+| Robin | `agentes/robin.png` |
+| Zoro | `agentes/zoro.png` |
+| Sanji | `agentes/sanji.png` |
+| Brook | `agentes/brook.png` |
+| Chopper | `agentes/chopper.png` |
+| Vegapunk | `agentes/vegapunk.png` |
+| Nami | `agentes/nami.png` |
+| Law | `agentes/law.png` |
